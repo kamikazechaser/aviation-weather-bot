@@ -1,11 +1,13 @@
 const request = require('request');
 const cheerio = require('cheerio');
-const telegramBot = require('node-telegram-bot-api');
+const telegramBot = require('tgfancy');
 
 const telegramToken = '356806264:AAGAC4f0V4ia9Z7AuVexoZgsV_9brMVlJb4';
 
 const bot = new telegramBot(telegramToken, {
-    polling: true,
+    tgfancy: {
+        openshiftWebHook: true,
+    },
 });
 
 function getWeather(location, callback) {
